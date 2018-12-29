@@ -1,0 +1,43 @@
+language: python
+
+matrix:
+  include:
+    - python: 3.5
+      env: TOXENV=tests-py35
+    - python: 3.5
+      env: TOXENV=mutations-py35
+    - python: 3.5
+      env: TOXENV=style-py35
+    - python: 3.5
+      env: TOXENV=docs-py35
+
+    - python: 3.6
+      env: TOXENV=tests-py36
+    - python: 3.6
+      env: TOXENV=mutations-py36
+    - python: 3.6
+      env: TOXENV=style-py36
+    - python: 3.6
+      env: TOXENV=docs-py36
+
+    - python: 3.7
+      env: TOXENV=tests-py37
+      dist: xenial
+      sudo: true
+    - python: 3.7
+      env: TOXENV=mutations-py37
+      dist: xenial
+      sudo: true
+    - python: 3.7
+      env: TOXENV=style-py37
+      dist: xenial
+      sudo: true
+    - python: 3.7
+      env: TOXENV=docs-py37
+      dist: xenial
+      sudo: true
+
+install:
+  - pip install -r requirements_dev.txt
+script:
+  - tox
