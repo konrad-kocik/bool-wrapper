@@ -1,5 +1,5 @@
 Welcome to bool-wrapper's documentation!
-======================================
+========================================
 
 .. toctree::
    :maxdepth: 2
