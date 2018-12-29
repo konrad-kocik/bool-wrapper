@@ -5,8 +5,6 @@ matrix:
     - python: 3.5
       env: TOXENV=tests-py35
     - python: 3.5
-      env: TOXENV=mutations-py35
-    - python: 3.5
       env: TOXENV=style-py35
     - python: 3.5
       env: TOXENV=docs-py35
