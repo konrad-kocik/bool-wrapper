@@ -2,19 +2,28 @@ class BoolWrapper:
     """
     Wraps bool object into mutable, non-singleton class.
     """
-    def __init__(self, bool_to_wrap):
+    def __init__(self, value):
         """
         Initializes object with given bool value.
-        :param bool_to_wrap: bool value (or value which could be converted to bool) used for initialization
-        :type bool_to_wrap: bool
+        :param value: bool value (or value which could be converted to bool) used for initialization
+        :type value: bool
         """
-        self._wrapped_bool = bool(bool_to_wrap)
+        self._value = bool(value)
+
+    def set(self, value):
+        self._value = bool(value)
+
+    # def get(self):
+        # TODO: implement this if someone would like to operate on real bool object
 
     def __repr__(self):
-        return repr(self._wrapped_bool)
+        return repr(self._value)
 
     def __bool__(self):
-        return self._wrapped_bool
+        return self._value
 
-    def wrap(self, bool_to_wrap):
-        self._wrapped_bool = bool(bool_to_wrap)
+    def __eq__(self, other):
+        return self._value == other
+
+    def __ne__(self, other):
+        return self._value != other
